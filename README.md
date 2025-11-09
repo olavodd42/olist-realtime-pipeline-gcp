@@ -9,19 +9,19 @@ Pipeline de dados em tempo real que simula pedidos de e-commerce, processa com P
 
 ```mermaid
 graph TD
-  A[Publisher - Python] -->|Eventos JSON| B[Pub/Sub Topic]
-  B --> C[Cloud Function - Python]
-  C --> D[BigQuery (ecommerce_raw)]
-  D --> E[dbt (ecommerce_analytics)]
-  E --> F[Looker Studio Dashboard]
-  F --> G[Business Insights]
+    A[Publisher - Python] -->|Eventos JSON| B[Pub/Sub Topic]
+    B --> C[Cloud Function - Python]
+    C --> D[BigQuery (ecommerce_raw)]
+    D --> E[dbt (ecommerce_analytics)]
+    E --> F[Looker Studio Dashboard]
+    F --> G[Business Insights]
 
-  subgraph GCP
-    B
-    C
-    D
-    E
-  end
+    subgraph GCP
+        B
+        C
+        D
+        E
+end
 ```
 📄 [Ver documento técnico completo](docs/business_case.md)
 🗺️ [Ver diagrama em alta resolução](docs/business_case.md)
@@ -109,7 +109,7 @@ olist-realtime-pipeline-gcp/
 Olavo Defendi Dalberto
 🎓 Engenharia da Computação — UFSM
 📍 Santa Maria, RS
-📧 [olavodalberto921@gmail.com](mailto:olavodalberto921@gmail.com)
+📧 [olavodalberto921@gmail.com](mailto:olavodalberto921@gmail.com)<br>
 🔗 [LinkedIn](https://www.linkedin.com/in/olavo-defendi-dalberto/) | [GitHub](https://github.com/olavodd42)
 
 ## 📅 Licença
