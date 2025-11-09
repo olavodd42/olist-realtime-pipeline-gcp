@@ -1,6 +1,9 @@
 import uuid, random, string, socket
 from datetime import datetime, timezone
 from typing import Optional
+import os
+from zoneinfo import ZoneInfo
+
 
 def new_id(prefix: str, n: int=6) -> str:
     """
@@ -15,11 +18,13 @@ def new_id(prefix: str, n: int=6) -> str:
     """
     return f"{prefix}-" + "".join(random.choices(string.digits, k=n))
 
-def now_utc() -> str:
+def now_utc():
     """
-    Função que obtém a data e hora atual.
+    Retorna timestamp ISO 8601. Se EVENT_TZ estiver definido,
+    usa esse fuso; caso contrário usa UTC.
     """
-    return datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
+    tz = os.getenv("EVENT_TZ", "UTC")
+    return datetime.now(ZoneInfo(tz)).isoformat(timespec="seconds")
 
 def host_ip() -> Optional[str]:
     """

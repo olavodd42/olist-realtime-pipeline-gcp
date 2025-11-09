@@ -1,0 +1,13 @@
+version: 2
+models:
+  - name: stg_orders
+    tests:
+      - not_null:
+          column_name: event_id
+  - name: fct_orders
+    tests:
+      - unique:
+          column_name: order_id
+      - not_null:
+          column_name: order_id
+  - name: fct_orders_by_category

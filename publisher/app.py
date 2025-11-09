@@ -4,6 +4,8 @@ from google.cloud import pubsub_v1
 from fakestore import get_products, sample_items
 from typing import List, Dict, Optional
 from utils import new_id, now_utc, host_ip
+import random
+from datetime import datetime, timezone, timedelta
 
 PROJECT: Optional[str] = os.getenv("GOOGLE_CLOUD_PROJECT") or os.getenv("GCP_PROJECT")
 TOPIC: str             = os.getenv("PUBSUB_TOPIC", "ecommerce-events")
